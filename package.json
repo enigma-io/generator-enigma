@@ -1,0 +1,22 @@
+{
+    "name": "generator-enigma",
+    "description": "Generate a React application based on Enigma.io FE coding conventions.",
+    "private": true,
+    "version": "1.0.0",
+    "author": {
+        "name": "Evan Jacobs",
+        "email": "evan.jacobs@enigma.io",
+        "url": "http://yaycmyk.com"
+    },
+    "keywords": ["yeoman-generator"],
+    "dependencies": {
+        "yeoman-generator": "^0.19.0",
+        "chalk": "^1.0.0",
+        "yosay": "^1.0.2",
+        "lodash": "^3.8.0",
+        "mkdirp": "^0.5.1"
+    },
+    "scripts": {
+        "postinstall": "which yo || npm i -g yo"
+    }
+}

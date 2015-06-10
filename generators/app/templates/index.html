@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= appName %></title>
+    </head>
+    <body>
+        <!-- Remove for production -->
+        <script src="./webpack-dev-server.js"></script>
+
+        <!-- a sourcemap is included back to the original files -->
+        <script src="./release/js/vendor.js"></script>
+        <script src="./release/js/bundle.js"></script>
+    </body>
+</html>
