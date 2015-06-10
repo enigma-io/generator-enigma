@@ -59,7 +59,7 @@ module.exports = yeoman.generators.Base.extend({
 
         this.prompt(prompts, function(answers) {
             this.answers = answers;
-            this.answers.name = _.kebabCase(this.answers.name);
+            this.answers.appName = _.kebabCase(this.answers.appName);
 
             this.answers.currentDate = (new Date()).toLocaleDateString();
             this.answers.currentYear = (new Date()).getFullYear();

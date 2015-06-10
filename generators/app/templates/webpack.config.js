@@ -2,12 +2,14 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
+    devtool: 'cheap-module-source-map',
     entry: {
         vendor: ['react/addons'],
         app: ['./src/main.js']
     },
     output: {
         path: path.join(__dirname, 'release/js'),
+        pathinfo: true,
         publicPath: 'release/js',
         filename: 'bundle.js',
         chunkFilename: '[hash]/[id].js',
@@ -16,9 +18,12 @@ module.exports = {
     },
     recordsOutputPath: path.join(__dirname, 'artifacts/records.json'),
     module: {
+        preLoaders: [
+            {test: /\.jsx?$/, loader: 'eslint', exclude: /(node_modules|bower_components)/}
+        ],
         loaders: [
             {test: /\.scss$/, loader: 'style!css!autoprefixer?{browsers:"> 5% in US"}!sass'},
-            {test: /\.jsx$/, loader: 'jsx-loader'}
+            {test: /\.jsx?$/, loader: 'babel', exclude: /(node_modules|bower_components)/}
         ],
         noParse: ['react/addons']
     },

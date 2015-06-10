@@ -1,19 +1,11 @@
-'use strict';
+import React from 'react/addons';
+import Example from './components/Example.jsx';
 
-(function() {
-    var React = require('react/addons');
-    var Example = require('./components/Example.jsx');
+require('./scss/main.scss');
 
-    function render() {
-        React.render(React.createElement(Example, {
-            title: 'Hello World!',
-            description: 'This is your first React component...'
-        }), document.body);
-    }
+// Do bootstrapping here...
 
-    require('./scss/main.scss');
-
-    // Do bootstrapping here...
-
-    render();
-})();
+React.render(React.createElement(Example, {
+	title: 'Hello World!',
+	description: 'This is your first React component...'
+}), document.body);

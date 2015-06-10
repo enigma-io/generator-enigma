@@ -5,7 +5,3 @@ fi
 if ! [ `which webpack-dev-server` ]; then
    sudo npm i -g webpack-dev-server;
 fi
-
-if ! [ `which sass` ]; then
-    sudo gem install sass
-fi

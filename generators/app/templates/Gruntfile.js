@@ -1,153 +1,131 @@
-/* eslint-env node */
-
-'use strict';
-
 var _ = require('lodash');
 var webpack = require('webpack');
 var webpackConfig = require('./webpack.config.js');
 
 module.exports = function(grunt) {
-    var webpackProdConfig = _.merge({}, webpackConfig);
+	var webpackProdConfig = _.merge({}, webpackConfig);
 
-    // Minification is only needed for "release" bundles, saves ~3s per build
-    webpackProdConfig.plugins.push(
-        new webpack.DefinePlugin({
-            'process.env': {
-                // production env removes React.addons.TestUtils ~53kb savings
-                NODE_ENV: JSON.stringify('production')
-            }
-        }),
-        new webpack.optimize.DedupePlugin(),
-        new webpack.optimize.UglifyJsPlugin({
-            preserveComments: 'some',
-            compress: {
-                warnings: false
-            }
-        })
-    );
+	webpackProdConfig.devtool = null;
 
-    require('load-grunt-tasks')(grunt);
-    require('time-grunt')(grunt);
+	// Minification is only needed for "release" bundles, saves ~3s per build
+	webpackProdConfig.plugins.push(
+		new webpack.DefinePlugin({
+			'process.env': {
+				// production env removes React.addons.TestUtils ~53kb savings
+				NODE_ENV: JSON.stringify('production')
+			}
+		}),
+		new webpack.optimize.DedupePlugin(),
+		new webpack.optimize.UglifyJsPlugin({
+			compress: {
+				warnings: false
+			},
+			preserveComments: 'some',
+			sourceMap: false
+		})
+	);
 
-    // Get full error/warning stacks
-    grunt.option('stack', true);
+	require('load-grunt-tasks')(grunt);
+	require('time-grunt')(grunt);
 
-    grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
+	// Get full error/warning stacks
+	grunt.option('stack', true);
 
-        clean: {
-            all: [
-                'artifacts/',
-                'release/',
-                'records.json'
-            ]
-        },
+	grunt.initConfig({
+		pkg: grunt.file.readJSON('package.json'),
 
-        eslint: {
-            options: {
-                quiet: true
-            },
+		clean: {
+			all: [
+				'artifacts/',
+				'release/',
+				'records.json'
+			]
+		},
 
-            dev: [
-                'src/**/*.js',
-                'src/**/*.jsx',
-                'Gruntfile.js'
-            ],
+		karma: {
+			options: {
+				browsers: ['PhantomJS'],
 
-            unit: [
-                'test/**/*.js',
-                'test/**/*.jsx'
-            ]
-        },
+				coverageReporter: {
+					type: 'html',
+					dir: 'artifacts/coverage'
+				},
 
-        karma: {
-            options: {
-                browsers: ['PhantomJS'],
+				files: [
+					'test/bind.js',   // phantom <2.0 breaks without this
+					'test/unit.js'    // autodiscovery file
+				],
 
-                coverageReporter: {
-                    type: 'html',
-                    dir: 'artifacts/coverage'
-                },
+				frameworks: [
+					'chai',     // `expect` library, more human-readable than the normal `assert`
+					'mocha',    // unit testing framework
+					'sinon'     // amazing mock & stub library - absurdly useful
+				],
 
-                files: [
-                    'test/bind.js',   // phantom <2.0 breaks without this
-                    'test/unit.js'    // autodiscovery file
-                ],
+				preprocessors: {
+					'src/**/*.js': ['webpack'],
+					'src/**/*.jsx': ['webpack'],
+					'test/unit.js': [
+						'webpack',
+						'sourcemap'
+					]
+				},
 
-                frameworks: [
-                    'chai',     // `expect` library, more human-readable than the normal `assert`
-                    'mocha',    // unit testing framework
-                    'sinon'     // amazing mock & stub library - absurdly useful
-                ],
+				reporters: ['dots'],
+				singleRun: true,
 
-                preprocessors: {
-                    'src/**/*.js': ['webpack'],
-                    'src/**/*.jsx': ['webpack'],
-                    'test/unit.js': [
-                        'webpack',
-                        'sourcemap'
-                    ]
-                },
+				phantomjsLauncher: {
+					exitOnResourceError: true
+				},
 
-                reporters: ['dots'],
-                singleRun: true,
+				webpack: { // similar to the normal configuration, but doesn't care about chunking or minification
+					devtool: 'inline-source-map', // easier to debug with
+					module: {
+						preLoaders: webpackConfig.module.preLoaders,
+						loaders: webpackConfig.module.loaders,
+						noParse: ['react/addons']
+					}
+				}
+			},
 
-                phantomjsLauncher: {
-                    exitOnResourceError: true
-                },
+			coverage: {
+				reporters: [
+					'dots',
+					'coverage'
+				],
+				webpack: {
+					module: {
+						postLoaders: [{
+							test: /\.jsx?$/,
+							exclude: /(test|node_modules)\//,
+							loader: 'istanbul-instrumenter'
+						}]
+					}
+				}
+			},
 
-                webpack: { // similar to the normal configuration, but doesn't care about chunking or minification
-                    devtool: 'inline-source-map', // easier to debug with
-                    module: {
-                        loaders: webpackConfig.module.loaders,
-                        noParse: ['react/addons']
-                    }
-                },
+			debug: {
+				autoWatch: true,
+				browsers: ['Chrome'],
+				singleRun: false
+			},
 
-                webpackServer: {
-                    noInfo: true,
-                    quiet: true
-                }
-            },
+			unit: {}
+		},
 
-            coverage: {
-                reporters: [
-                    'dots',
-                    'coverage'
-                ],
-                webpack: {
-                    module: {
-                        postLoaders: [{
-                            test: /\.jsx?$/,
-                            exclude: /(test|node_modules)\//,
-                            loader: 'istanbul-instrumenter'
-                        }]
-                    }
-                }
-            },
+		webpack: {
+			dev: webpackConfig,
+			prod: webpackProdConfig
+		}
+	});
 
-            debug: {
-                autoWatch: true,
-                browsers: ['Chrome'],
-                singleRun: false
-            },
+	grunt.registerTask('base:dev', ['clean']);
+	grunt.registerTask('base:prod', ['clean']);
 
-            unit: {}
-        },
+	grunt.registerTask('default', ['base:dev', 'webpack:dev']); // what happens when you type "grunt" in the terminal
+	grunt.registerTask('release', ['base:prod', 'webpack:prod']);
 
-        webpack: {
-            dev: webpackConfig,
-            prod: webpackProdConfig
-        }
-    });
-
-    grunt.registerTask('base:dev', ['eslint:dev', 'clean']);
-    grunt.registerTask('base:prod', ['eslint:dev', 'clean']);
-
-    grunt.registerTask('default', ['base:dev', 'webpack:dev']); // what happens when you type "grunt" in the terminal
-    grunt.registerTask('release', ['base:prod', 'webpack:prod']);
-
-    grunt.registerTask('unit', ['eslint:unit', 'karma:unit']);
-    grunt.registerTask('debug', ['eslint:unit', 'karma:debug']);
-    grunt.registerTask('coverage', ['default', 'karma:coverage']);
+	grunt.registerTask('unit', ['karma:unit']);
+	grunt.registerTask('debug', ['karma:debug']);
+	grunt.registerTask('coverage', ['default', 'karma:coverage']);
 };
