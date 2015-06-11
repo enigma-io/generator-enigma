@@ -30,7 +30,3 @@ If you don't want to work "live" on your files, `npm run build` will compile all
 
 ###Testing
 The [Karma](http://karma-runner.github.io/0.12/index.html) test runner is included by default, supported by the [Mocha](http://devdocs.io/mocha/) unit testing framework, [Chai](http://devdocs.io/chai/api/bdd/index) expectation library and [Sinon](http://devdocs.io/sinon/) spy/stub/mock engine.
-
-###For future maintainers...
-**jsx-loader and react major/minor versions should match in package.json (_XX.XX_.XXXX)**
-patch versions can differ without issue
