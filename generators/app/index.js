@@ -76,17 +76,19 @@ module.exports = yeoman.generators.Base.extend({
         mkdirp('test');
 
         copier([
-            '.eslintignore',
             '.eslintrc',
             '.gitignore',
-            'INSTALL',
-            'Gruntfile.js',
+            'karma.conf.js',
+            'karma.base.conf.js',
+            'karma.coverage.conf.js',
+            'karma.debug.conf.js',
             'webpack.config.js',
-            'src/main.js',
+            'webpack.release.config.js',
+            'src/index.js',
             'src/components/Example.jsx',
             'src/scss/_sanitize.scss',
             'src/scss/main.scss',
-            'src/scss/components/example.scss',
+            'src/scss/components/Example.scss',
             'test/bind.js',
             'test/unit.js',
             'test/components/Example-test.jsx'

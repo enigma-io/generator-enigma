@@ -5,7 +5,7 @@ module.exports = {
     devtool: 'cheap-module-source-map',
     entry: {
         vendor: ['react/addons'],
-        app: ['./src/main.js']
+        app: ['./src']
     },
     output: {
         path: path.join(__dirname, 'release/js'),
@@ -18,13 +18,19 @@ module.exports = {
     },
     recordsOutputPath: path.join(__dirname, 'artifacts/records.json'),
     module: {
-        preLoaders: [
-            {test: /\.jsx?$/, loader: 'eslint', exclude: /(node_modules|bower_components)/}
-        ],
-        loaders: [
-            {test: /\.scss$/, loader: 'style!css!autoprefixer?{browsers:"> 5% in US"}!sass'},
-            {test: /\.jsx?$/, loader: 'babel', exclude: /(node_modules|bower_components)/}
-        ],
+        preLoaders: [{
+            test: /\.jsx?$/,
+            loader: 'eslint',
+            exclude: /(node_modules|bower_components|test\/unit|test\/bind)/
+        }],
+        loaders: [{
+            test: /\.scss$/,
+            loader: 'style!css!autoprefixer?{browsers:"> 5% in US"}!sass'
+        }, {
+            test: /\.jsx?$/,
+            loader: 'babel',
+            exclude: /(node_modules|bower_components)/
+        }],
         noParse: ['react/addons']
     },
     plugins: [
