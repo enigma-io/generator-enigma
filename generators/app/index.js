@@ -78,6 +78,7 @@ module.exports = yeoman.generators.Base.extend({
         copier([
             '.eslintrc',
             '.gitignore',
+            'CONTRIBUTING.md',
             'karma.conf.js',
             'karma.base.conf.js',
             'karma.coverage.conf.js',
