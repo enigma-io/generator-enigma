@@ -59,7 +59,7 @@ module.exports = yeoman.generators.Base.extend({
 
         this.prompt(prompts, function(answers) {
             this.answers = answers;
-            this.answers.name = _.kebabCase(this.answers.name);
+            this.answers.appName = _.kebabCase(this.answers.appName);
 
             this.answers.currentDate = (new Date()).toLocaleDateString();
             this.answers.currentYear = (new Date()).getFullYear();
@@ -76,17 +76,19 @@ module.exports = yeoman.generators.Base.extend({
         mkdirp('test');
 
         copier([
-            '.eslintignore',
             '.eslintrc',
             '.gitignore',
-            'INSTALL',
-            'Gruntfile.js',
+            'karma.conf.js',
+            'karma.base.conf.js',
+            'karma.coverage.conf.js',
+            'karma.debug.conf.js',
             'webpack.config.js',
-            'src/main.js',
+            'webpack.release.config.js',
+            'src/index.js',
             'src/components/Example.jsx',
             'src/scss/_sanitize.scss',
             'src/scss/main.scss',
-            'src/scss/components/example.scss',
+            'src/scss/components/Example.scss',
             'test/bind.js',
             'test/unit.js',
             'test/components/Example-test.jsx'
