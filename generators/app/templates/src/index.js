@@ -1,5 +1,5 @@
 import React from 'react/addons';
-import Example from './components/Example.jsx';
+import Example from './components/Example';
 
 require('./scss/main.scss');
 
