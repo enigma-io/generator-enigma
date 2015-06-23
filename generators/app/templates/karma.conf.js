@@ -1,3 +1,3 @@
 module.exports = function(config) {
-	config.set(require('./karma.base.conf'));
+    config.set(require('./karma.base.conf'));
 };
