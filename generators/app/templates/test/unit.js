@@ -6,6 +6,6 @@
     A common pattern is to have a directory for mocks, one for components, one for stores etc.
 */
 
-var context = require.context('../test', true, /^(?!unit.js|bind.js).*\.jsx?$/);
+var context = require.context('.', true, /-test\.jsx?$/);
 
 context.keys().forEach(context);
