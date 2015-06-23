@@ -13,10 +13,9 @@ module.exports = {
         'test/unit.js'    // autodiscovery file
     ],
 
-    frameworks: [
-        'chai',     // `expect` library, more human-readable than the normal `assert`
-        'mocha',    // unit testing framework
-        'sinon'     // mock & stub library - absurdly useful
+    frameworks: [ // see the README for more info on these frameworks
+        'sinon-chai',
+        'mocha'
     ],
 
     preprocessors: {
@@ -40,7 +39,9 @@ module.exports = {
         module: {
             preLoaders: webpackConfig.module.preLoaders,
             loaders: webpackConfig.module.loaders,
-            noParse: ['react/addons', 'lodash']
-        }
+            postLoaders: webpackConfig.module.postLoaders,
+            noParse: webpackConfig.module.noParse
+        },
+        resolve: webpackConfig.resolve
     }
 };

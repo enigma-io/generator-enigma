@@ -31,7 +31,9 @@ module.exports = {
         loaders: [{
             test: /\.scss$/,
             loader: 'style!css!autoprefixer?{browsers:"> 5% in US"}!sass'
-        }, {
+        }],
+
+        postLoaders: [{
             test: /\.jsx?$/,
             loader: 'babel',
             exclude: /(node_modules|bower_components)/
@@ -41,6 +43,7 @@ module.exports = {
     },
 
     plugins: [
+        new webpack.PrefetchPlugin('react/addons'),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
             filename: 'vendor.js',
