@@ -1,7 +1,7 @@
 /* eslint no-unused-expressions:0 */
 
 import React from 'react/addons';
-import Example from '../../src/components/Example.jsx';
+import Example from '../../src/components/Example';
 
 describe('Example', () => {
 	it('should render successfully', () => {
