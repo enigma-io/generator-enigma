@@ -71,28 +71,22 @@ module.exports = yeoman.generators.Base.extend({
     writing: function() {
         var copier = copy.bind(this);
 
-        mkdirp('src');
-        mkdirp('release');
-        mkdirp('test');
+        mkdirp('example');
+        mkdirp('dist');
 
         copier([
             '.eslintrc',
             '.gitignore',
+            '.pleeeaserc',
+            '_sanitize.scss',
             'CONTRIBUTING.md',
+            'example/index.js',
+            'example/style.scss',
+            'example/unit.js',
+            'index.js',
             'karma.conf.js',
-            'karma.base.conf.js',
-            'karma.coverage.conf.js',
-            'karma.debug.conf.js',
-            'webpack.config.js',
-            'webpack.release.config.js',
-            'src/index.js',
-            'src/components/Example.jsx',
-            'src/scss/_sanitize.scss',
-            'src/scss/main.scss',
-            'src/scss/components/Example.scss',
-            'test/bind.js',
-            'test/unit.js',
-            'test/components/Example-test.jsx'
+            'parallelize.sh',
+            'style.scss',
         ]);
 
         copier([

@@ -1,0 +1,10 @@
+{
+  "in": [
+    "./*.scss",
+    "./!(node_modules)/**/*.scss"
+  ],
+  "out": "dist/style.css",
+  "browsers": ["> 1% in US"],
+  "sass": true,
+  "sourcemaps": true
+}

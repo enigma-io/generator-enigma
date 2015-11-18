@@ -1,17 +1,6 @@
-import React from 'react/addons';
+import React from 'react';
 
-require('../scss/components/Example.scss');
-
-export default class Example extends React.Component {
-    render() {
-        return (
-            <div className='ui-example'>
-                {this.renderTitle()}
-                {this.renderDescription()}
-            </div>
-        );
-    }
-
+class Example extends React.Component {
     renderTitle() {
         if (this.props.title) {
             return (
@@ -27,9 +16,20 @@ export default class Example extends React.Component {
             );
         }
     }
+
+    render() {
+        return (
+            <div className='ui-example'>
+                {this.renderTitle()}
+                {this.renderDescription()}
+            </div>
+        );
+    }
 }
 
 Example.propTypes = {
     title: React.PropTypes.string,
-    description: React.PropTypes.string
+    description: React.PropTypes.string,
 };
+
+export default Example;

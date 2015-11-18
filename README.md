@@ -1,32 +1,41 @@
 # Enigma Platform Team
 ## React Webapp Generator for Yeoman
 
+1. [Installation](#installation)
+1. [Usage](#usage)
+1. [Testing](#testing)
+
 Scaffolding for automation of basic tooling and tasks typically required by React projects, including:
 
 - Generation of JSX views and associated test files
-- CommonJS module bundling via [Webpack](http://webpack.github.io/)
+- CommonJS module bundling via [Browserify](http://browserify.org/)
 - Code quality assessment & style enforcement via [ESLint](http://eslint.org/)
 
-##Installation
+
+### Installation
+
 1. Pull down this repo
-2. Run `npm install` in the folder and then `npm link`
-3. If you don't have `yo` (Yeoman) installed, run `npm i -g yo`
+   ```
+   git clone git@github.com:enigma-platform/scaffold-fe-reactapp.git
+   ```
+1. Run `npm install` in the folder and then `npm link`
+1. If you don't have `yo` (Yeoman) installed, run `npm i -g yo`
 
-##Usage
+
+### Usage
+
 **To set up a new app, create a folder, enter it and run `yo enigma`**
-The generator will ask a few questions and insert the prebuilt skeleton for a typical React-based webapp. Then you're rolling!
 
-**To create a new component inside an existing app, run `yo enigma:c`**
-A JSX file and corresponding unit test file will be automatically created.
+The generator will ask a few questions and insert the prebuilt skeleton for a typical React-based webapp. Then you're rolling!
 
 Once you've set up your app, check out the targets available in `package.json`. The conveniences available at `npm run <target>`:
 
+- `build`: Compiles your application JS (with sourcemapping) to `dist/bundle.js`
+- `release`: Compiles and minifies your application JS (without sourcemapping) to `dist/bundle.min.js`
 - `start`: Compiles your app and boots up a livereload server. Just navigate to the URL provided and make changes to your files (JS, JSX, SCSS)
-- `test`: Runs Karma against your unit tests in headless mode.
-- `coverage`: coverage scanner, see the compiled result in `artifacts/coverage`
-- `debug`: unit testing in a launched browser window with the devtools debugger and sourcemaps
+- `test`: Runs Karma against your unit tests. (will automatically include any file named `unit.js`)
 
-If you don't want to work "live" on your files, `npm run build` will compile all the assets to the `release/` folder and `npm run release` will do the same, but remove all testing and debugging code from the finalized bundles.
 
-###Testing
-The [Karma](http://karma-runner.github.io/0.12/index.html) test runner is included by default, supported by the [Mocha](http://devdocs.io/mocha/) unit testing framework, [Chai](http://devdocs.io/chai/api/bdd/index) expectation library and [Sinon](http://devdocs.io/sinon/) spy/stub/mock engine.
+### Testing
+
+The [Karma](http://karma-runner.github.io/0.13/index.html) test runner is included by default, supported by the [Mocha](http://devdocs.io/mocha/) unit testing framework, [Chai](http://devdocs.io/chai/api/bdd/index) expectation library and [Sinon](http://devdocs.io/sinon/) spy/stub/mock engine.
