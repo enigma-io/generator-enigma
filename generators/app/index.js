@@ -71,7 +71,7 @@ module.exports = yeoman.generators.Base.extend({
     writing: function() {
         var copier = copy.bind(this);
 
-        mkdirp('example');
+        mkdirp('example/__tests__');
         mkdirp('dist');
 
         copier([
@@ -82,9 +82,9 @@ module.exports = yeoman.generators.Base.extend({
             'CONTRIBUTING.md',
             'example/index.js',
             'example/style.scss',
-            'example/unit.js',
+            'example/__tests__/unit.js',
             'index.js',
-            'karma.conf.js',
+            'jest.preprocessor.js',
             'parallelize.sh',
             'style.scss',
         ]);

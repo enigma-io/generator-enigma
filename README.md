@@ -11,6 +11,7 @@ Scaffolding for automation of basic tooling and tasks typically required by Reac
 - CommonJS module bundling via [Browserify](http://browserify.org/)
 - Code quality assessment & style enforcement via [ESLint](http://eslint.org/)
 
+---
 
 ### Installation
 
@@ -21,6 +22,9 @@ Scaffolding for automation of basic tooling and tasks typically required by Reac
 1. Run `npm install` in the folder and then `npm link`
 1. If you don't have `yo` (Yeoman) installed, run `npm i -g yo`
 
+[back to top](#react-webapp-generator-for-yeoman)
+
+---
 
 ### Usage
 
@@ -30,12 +34,18 @@ The generator will ask a few questions and insert the prebuilt skeleton for a ty
 
 Once you've set up your app, check out the targets available in `package.json`. The conveniences available at `npm run <target>`:
 
-- `build`: Compiles your application JS (with sourcemapping) to `dist/bundle.js`
+- `build`: Compiles your application JS (with sourcemapping -- good for debugging) to `dist/bundle.js`
 - `release`: Compiles and minifies your application JS (without sourcemapping) to `dist/bundle.min.js`
-- `start`: Compiles your app and boots up a livereload server. Just navigate to the URL provided and make changes to your files (JS, JSX, SCSS)
-- `test`: Runs Karma against your unit tests. (will automatically include any file named `unit.js`)
+- `start`: Compiles your app and boots up a livereload server -- just make changes to your files (JS, SCSS, etc.)
+- `test`: Runs your unit tests. (will automatically include any file inside of folders named `__tests__`)
+- `lint`: Checks your project for JS code style, according to the rules in `.eslintrc`
 
+[back to top](#react-webapp-generator-for-yeoman)
+
+---
 
 ### Testing
 
-The [Karma](http://karma-runner.github.io/0.13/index.html) test runner is included by default, supported by the [Mocha](http://devdocs.io/mocha/) unit testing framework, [Chai](http://devdocs.io/chai/api/bdd/index) expectation library and [Sinon](http://devdocs.io/sinon/) spy/stub/mock engine.
+The [Jasmine 2](http://jasmine.github.io/2.0/introduction.html) test runner is included by default, as a part of the [Jest](https://facebook.github.io/jest/) unit testing framework.
+
+[back to top](#react-webapp-generator-for-yeoman)

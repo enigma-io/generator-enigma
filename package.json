@@ -2,7 +2,7 @@
     "name": "generator-enigma",
     "description": "Generate a React application based on Enigma Platform team FE coding conventions.",
     "private": true,
-    "version": "2.0.0",
+    "version": "3.0.0",
     "contributors": [
         "Evan Jacobs <evan.jacobs@enigma.io>"
     ],
