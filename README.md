@@ -7,9 +7,10 @@
 
 Scaffolding for automation of basic tooling and tasks typically required by React projects, including:
 
-- Generation of JSX views and associated test files
 - CommonJS module bundling via [Browserify](http://browserify.org/)
 - Code quality assessment & style enforcement via [ESLint](http://eslint.org/)
+- SCSS -> CSS compilation via [Pleeease](http://pleeease.io/) + [Autoprefixer](https://github.com/postcss/autoprefixer)
+- Unit testing via the [Jest](https://facebook.github.io/jest/) framework and [Jasmine2](http://jasmine.github.io/2.0/introduction.html) test runner
 
 ---
 
