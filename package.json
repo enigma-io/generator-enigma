@@ -1,7 +1,6 @@
 {
     "name": "generator-enigma",
     "description": "Generate a React application based on Enigma Platform team FE coding conventions.",
-    "private": true,
     "version": "4.0.0",
     "license": "MIT",
     "contributors": [
