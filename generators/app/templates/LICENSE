@@ -4,7 +4,7 @@ If you're not a fan of the MIT license, find more options here: http://chooseali
 
 The MIT License (MIT)
 
-Copyright (c) <%= currentYear %> <%= authorName %>
+Copyright (c) <%= currentYear %>-present <%= authorName %>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
