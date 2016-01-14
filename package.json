@@ -2,16 +2,23 @@
     "name": "generator-enigma",
     "description": "Generate a React application based on Enigma Platform team FE coding conventions.",
     "private": true,
-    "version": "3.0.0",
+    "version": "4.0.0",
+    "license": "MIT",
     "contributors": [
         "Evan Jacobs <evan.jacobs@enigma.io>"
     ],
-    "keywords": ["yeoman-generator"],
+    "keywords": [
+        "yeoman",
+        "yeoman-generator",
+        "react",
+        "jest",
+        "stylus"
+    ],
     "dependencies": {
-        "yeoman-generator": "^0.21.0",
+        "yeoman-generator": "^0.22.0",
         "chalk": "^1.0.0",
         "yosay": "^1.0.2",
-        "lodash": "^3.8.0",
+        "lodash": "^4.0.0",
         "mkdirp": "^0.5.1"
     },
     "scripts": {

@@ -1,6 +1,25 @@
 # Enigma Platform Team
 ## React Webapp Generator Changelog
 
+---
+
+### 4.0.0 (1/14/2016)
+#### Breaking Changes
+
+__SCSS has been removed in favor of Stylus.__
+
+Both tools have similar feature sets, the move is largely driven by codebase quality and ease of integration. The watcher in Stylus is far superior to that of the SCSS implementation in Ruby and allows for highly desirable features like `@import` globbing (used in the root `style.styl`).
+
+Learn more about the language at [stylus-lang.com](http://stylus-lang.com/). _Note: you can still [write normal CSS](http://stylus-lang.com/docs/css-style.html) in the `.styl` files, special syntax is not needed._
+
+#### Other Changes
+
+- Updated dependencies
+- Renamed some npm scripts to be cleaner
+- Switched to "forever" license schema (e.g. 2016-present)
+
+---
+
 ### 3.0.0 (12/4/2015)
 #### Breaking Changes
 
@@ -12,6 +31,8 @@ PhantomJS is very problematic to build on testing hosts and generally doesn't wo
 
 - Updated Budo dependency to v7.x
 - Added new `npm lint` target for code style checking (also is automatically included during `npm start`)
+
+---
 
 ### 2.0.0 (11/18/2015)
 #### Breaking Changes
@@ -25,6 +46,7 @@ This change is a precipitation of the standardization around Browserify by the P
 - Babel (via `babelify`) has been updated to v6.x
 - Rewrote most of the sample code to assume JSX transpilation and use more ES6 functionality
 
+---
 
 ### 1.0.1 (6/23/2015)
 
@@ -33,6 +55,7 @@ This change is a precipitation of the standardization around Browserify by the P
 - Prefetch `react/addons` for increased build performance
 - Moved `babel-loader` to `postLoaders`
 
+---
 
 ### 1.0.0 (6/9/2015)
 
