@@ -1,9 +1,13 @@
 # Enigma Platform Team
 ## React Webapp Generator for Yeoman
 
+---
+
 1. [Installation](#installation)
 1. [Usage](#usage)
 1. [Testing](#testing)
+
+---
 
 Scaffolding for automation of basic tooling and tasks typically required by React projects, including:
 
