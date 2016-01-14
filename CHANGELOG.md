@@ -3,6 +3,12 @@
 
 ---
 
+### 4.0.1 (1/14/2016)
+
+Updated package metadata.
+
+---
+
 ### 4.0.0 (1/14/2016)
 #### Breaking Changes
 
