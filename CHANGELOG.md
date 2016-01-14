@@ -3,9 +3,9 @@
 
 ---
 
-### 4.0.1 (1/14/2016)
+### 4.0.1, 4.0.2 (1/14/2016)
 
-Updated package metadata.
+Updated package metadata, README.
 
 ---
 
