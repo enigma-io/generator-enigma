@@ -23,7 +23,7 @@ Scaffolding for automation of basic tooling and tasks typically required by Reac
 
 1. Pull down this repo
    ```
-   git clone git@github.com:enigma-platform/scaffold-fe-reactapp.git
+   git clone git@github.com:enigma-io/generator-enigma.git
    ```
 1. Run `npm install` in the folder and then `npm link`
 1. If you don't have `yo` (Yeoman) installed, run `npm i -g yo`
