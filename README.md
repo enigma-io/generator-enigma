@@ -40,8 +40,10 @@ The generator will ask a few questions and insert the prebuilt skeleton for a ty
 
 Once you've set up your app, check out the targets available in `package.json`. The conveniences available at `npm run <target>`:
 
-- `build`: Compiles your application JS (with sourcemapping -- good for debugging) to `dist/bundle.js`
-- `release`: Compiles and minifies your application JS (without sourcemapping) to `dist/bundle.min.js`
+- `build`: Compiles your application JS (with sourcemapping -- good for debugging) to `dist/assets/bundle.js` and style files (with sourcemapping) to `dist/assets/style.css`
+
+- `release`: Compiles and minifies your application JS (without sourcemapping) to `dist/assets/bundle.min.js` and style files (without sourcemapping) to `dist/assets/style.min.css` - the intent is you should be able to copy the contents of `dist` to a server and have it work without modification
+
 - `start`: Compiles your app and boots up a livereload server -- just make changes to your files (JS, Stylus/CSS, etc.)
 - `test`: Runs your unit tests. (will automatically include any file inside of folders named `__tests__`)
 - `lint`: Checks your project for JS code style, according to the rules in `.eslintrc`
@@ -53,6 +55,17 @@ Once you've set up your app, check out the targets available in `package.json`. 
 ### Testing
 
 The [Jasmine 2](http://jasmine.github.io/2.0/introduction.html) test runner is included by default, as a part of the [Jest](https://facebook.github.io/jest/) unit testing framework.
+
+It is possible to collect coverage via Jest, by including the following in your package.json's "jest" property:
+
+```json
+"collectCoverage": true,
+"collectCoverageOnlyFrom": {
+  "example/index.js": true
+}
+```
+
+Add the files you wish to acquire coverage for to the list in `jest.collectCoverageOnlyFrom`. The framework is supposed to support globbing, but there is a [bug](https://github.com/facebook/jest/issues/632) and only specifically-mentioned files work at this time.
 
 [back to top](#react-webapp-generator-for-yeoman)
 
