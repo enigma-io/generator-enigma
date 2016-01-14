@@ -8,10 +8,11 @@
     "email": "<%= authorEmail %>"
   },
   "dependencies": {
-    "react": "^0.14.2",
-    "react-dom": "^0.14.2"
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6"
   },
   "devDependencies": {
+    "autoprefixer-stylus": "^0.8.1",
     "babel-eslint": "^4.0.0",
     "babel-jest": "^6.0.1",
     "babel-preset-es2015": "^6.1.18",
@@ -20,13 +21,10 @@
     "babelify": "^7.0.0",
     "browserify": "^12.0.0",
     "budo": "^7.0.0",
-    "eslint-plugin-react": "^2.5.0",
-    "eslintify": "*",
-    "jest": "^0.1.40",
-    "jest-cli": "^0.8.0",
-    "lodash": "^3.9.3",
-    "pleeease": "^4.0.2",
-    "pleeease-cli": "git+https://github.com/yaycmyk/pleeease-cli.git#fix-ignore",
+    "eslint-plugin-react": "^3.0.0",
+    "eslintify": "^1.0.0",
+    "jest-cli": "^0.8.2",
+    "stylus": "^0.53.0",
     "uglify-js": "^2.4.23",
     "watchify": "^3.2.3"
   },
@@ -38,31 +36,25 @@
     ]
   },
   "jest": {
-    "scriptPreprocessor": "./jest.preprocessor.js",
-    "testRunner": "./node_modules/jest-cli/src/testRunners/jasmine/jasmine2.js",
-    "unmockedModulePathPatterns": [
-      "."
-    ],
-    "modulePathIgnorePatterns": [
-      "./node_modules/"
-    ],
+    "setupEnvScriptFile": "jest.setup.js",
+    "scriptPreprocessor": "node_modules/babel-jest",
+    "testRunner": "node_modules/jest-cli/src/testRunners/jasmine/jasmine2.js",
     "preprocessorIgnorePatterns": [
-      "./node_modules/"
+      "node_modules"
     ]
   },
   "scripts": {
-    "build_js": "browserify index.js -t babelify --debug > dist/bundle.js",
-    "build_css": "pleeease-compile",
-    "build": "npm run build_css && npm run build_js",
-    "release_css": "pleeease-compile",
-    "release_html": "cp -f index.html dist/ && sed -e 's/bundle.js/bundle.min.js/g' -e 's/dist\\///g' < index.html > dist/index.html",
-    "release_js": "NODE_ENV=production browserify index.js -t babelify | uglifyjs -mc drop_console > dist/bundle.min.js",
-    "release": "npm run release_css && npm run release_html && npm run release_js",
-    "start_css": "pleeease-watch",
-    "start_js": "budo index.js:dist/bundle.js -H localhost --live --open --iw -- --debug -t eslintify -t babelify",
-    "start": "sh parallelize.sh \"npm run start_css\" \"npm run start_js\"",
+    "js": "browserify index.js -t babelify --debug > dist/assets/bundle.js",
+    "js:release": "NODE_ENV=production browserify index.js -t babelify | uglifyjs -mc drop_console > dist/assets/bundle.min.js",
+    "js:watch": "budo index.js:dist/assets/bundle.js -H 0.0.0.0 --live --open --iw -- --debug -t eslintify -t babelify",
+    "css": "stylus -m -u autoprefixer-stylus style.styl -o dist/assets/style.css --sourcemap-inline",
+    "css:release": "stylus -c -u autoprefixer-stylus style.styl -o dist/assets/style.min.css",
+    "css:watch": "npm run css -- -w",
+    "html:release": "cp -f index.html dist/ && sed -e 's/bundle.js/bundle.min.js/g' -e 's/style.css/style.min.css/g' -e 's/dist\\///g' < index.html > dist/index.html",
+    "build": "npm run js && npm run css",
+    "release": "npm run css:release && npm run html:release && npm run js:release",
+    "start": "sh parallelize.sh \"npm run css:watch\" \"npm run js:watch\"",
     "lint": "browserify index.js -t eslintify -t babelify --colors > /dev/null",
     "test": "jest --verbose"
   }
 }
-

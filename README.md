@@ -8,8 +8,9 @@
 Scaffolding for automation of basic tooling and tasks typically required by React projects, including:
 
 - CommonJS module bundling via [Browserify](http://browserify.org/)
+- ES2015 syntax support and transpilation via [Babel](https://babeljs.io/)
 - Code quality assessment & style enforcement via [ESLint](http://eslint.org/)
-- SCSS -> CSS compilation via [Pleeease](http://pleeease.io/) + [Autoprefixer](https://github.com/postcss/autoprefixer)
+- [Stylus](http://stylus-lang.com/) CSS preprocessing & automatic vendor prefix management via [Autoprefixer](https://github.com/postcss/autoprefixer#autoprefixer-)
 - Unit testing via the [Jest](https://facebook.github.io/jest/) framework and [Jasmine2](http://jasmine.github.io/2.0/introduction.html) test runner
 
 ---
@@ -37,7 +38,7 @@ Once you've set up your app, check out the targets available in `package.json`. 
 
 - `build`: Compiles your application JS (with sourcemapping -- good for debugging) to `dist/bundle.js`
 - `release`: Compiles and minifies your application JS (without sourcemapping) to `dist/bundle.min.js`
-- `start`: Compiles your app and boots up a livereload server -- just make changes to your files (JS, SCSS, etc.)
+- `start`: Compiles your app and boots up a livereload server -- just make changes to your files (JS, Stylus/CSS, etc.)
 - `test`: Runs your unit tests. (will automatically include any file inside of folders named `__tests__`)
 - `lint`: Checks your project for JS code style, according to the rules in `.eslintrc`
 
@@ -50,3 +51,9 @@ Once you've set up your app, check out the targets available in `package.json`. 
 The [Jasmine 2](http://jasmine.github.io/2.0/introduction.html) test runner is included by default, as a part of the [Jest](https://facebook.github.io/jest/) unit testing framework.
 
 [back to top](#react-webapp-generator-for-yeoman)
+
+---
+
+This module adheres to [Semantic Versioning](http://semver.org/).
+
+MIT

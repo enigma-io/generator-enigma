@@ -1,26 +1,34 @@
 /*! sanitize.css | CC0 Public Domain | github.com/jonathantneal/sanitize.css */
 
-$root-box-sizing: border-box !default;
-$root-cursor: default !default;
-$root-font-family: sans-serif !default;
-$root-font-size: 16px !default;
-$root-line-height: 1.5 !default;
-$root-text-rendering: optimizeLegibility !default;
+root-box-sizing ?= border-box
+root-cursor ?= default
+root-font-family ?= sans-serif
+root-font-size ?= 16px
+root-line-height ?= 1.5
+root-text-rendering ?= optimizeLegibility
 
-$html-background-color: #FFFFFF !default;
-$anchor-text-decoration: none !default;
-$form-element-background-color: transparent !default;
-$form-element-min-height: if(unitless($root-line-height), #{$root-line-height}em, if(unit($root-line-height) != '%', $root-line-height, null)) !default;
-$media-element-vertical-align: middle !default;
-$monospace-font-family: monospace !default;
-$nav-list-style: none !default;
-$selection-background-color: #B3D4FC !default;
-$selection-text-shadow: none !default;
-$small-font-size: 75% !default;
-$table-border-collapse: collapse !default;
-$table-border-spacing: 0 !default;
-$textarea-resize: vertical !default;
+html-background-color ?= #FFFFFF
+anchor-text-decoration ?= none
+form-element-background-color ?= transparent
 
+media-element-vertical-align ?= middle
+monospace-font-family ?= monospace
+nav-list-style ?= none
+selection-background-color ?= #B3D4FC
+selection-text-shadow ?= none
+small-font-size ?= 75%
+table-border-collapse ?= collapse
+table-border-spacing ?= 0
+textarea-resize ?= vertical
+
+
+if unit(root-line-height) == ''
+    form-element-min-height ?= unit(root-line-height, 'em')
+else
+    if unit(root-line-height) != '%'
+        form-element-min-height ?= root-line-height
+    else
+        form-element-min-height ?= null
 
 
 /*
@@ -29,7 +37,7 @@ $textarea-resize: vertical !default;
 
 :root {
     -ms-overflow-style: -ms-autohiding-scrollbar; // IE11+
-    overflow-y: scroll; // All browsers without overlaying scrollbars
+    // overflow-y: scroll; // All browsers without overlaying scrollbars
     text-size-adjust: 100%; // iOS 8+
 }
 
@@ -73,7 +81,7 @@ progress {
 }
 
 small {
-    font-size: $small-font-size; // All browsers
+    font-size: small-font-size; // All browsers
 }
 
 template {
@@ -140,22 +148,22 @@ textarea {
 // specify the root styles of the document
 
 :root {
-    box-sizing: $root-box-sizing;
-    cursor: $root-cursor;
-    font: #{$root-font-size}/#{$root-line-height} $root-font-family;
-    text-rendering: $root-text-rendering;
+    box-sizing: root-box-sizing;
+    cursor: root-cursor;
+    font: root-font-size/root-line-height root-font-family;
+    text-rendering: root-text-rendering;
 }
 
 // specify the html background color
 
 html {
-    background-color: $html-background-color;
+    background-color: html-background-color;
 }
 
 // specify the text decoration of anchors
 
 a {
-    text-decoration: $anchor-text-decoration;
+    text-decoration: anchor-text-decoration;
 }
 
 // specify media element style
@@ -166,7 +174,7 @@ iframe,
 img,
 svg,
 video {
-    vertical-align: $media-element-vertical-align;
+    vertical-align: media-element-vertical-align;
 }
 
 // specify the background color of form elements
@@ -175,7 +183,7 @@ button,
 input,
 select,
 textarea {
-    background-color: $form-element-background-color;
+    background-color: form-element-background-color;
 }
 
 // specify inheritance of form elements
@@ -211,7 +219,7 @@ button,
 [type="week"],
 select,
 textarea {
-    min-height: $form-element-min-height;
+    min-height: form-element-min-height;
 }
 
 // specify the font family of code elements
@@ -220,14 +228,14 @@ code,
 kbd,
 pre,
 samp {
-    font-family: $monospace-font-family, monospace;
+    font-family: monospace-font-family, monospace;
 }
 
 // specify the list style of nav lists
 
 nav ol,
 nav ul {
-    list-style: $nav-list-style;
+    list-style: nav-list-style;
 }
 
 // style select like a standard input
@@ -248,21 +256,21 @@ select {
 // specify the border styles of tables
 
 table {
-    border-collapse: $table-border-collapse;
-    border-spacing: $table-border-spacing;
+    border-collapse: table-border-collapse;
+    border-spacing: table-border-spacing;
 }
 
 // specify textarea resizability
 
 textarea {
-    resize: $textarea-resize;
+    resize: textarea-resize;
 }
 
 // specify text selection background color and omit drop shadow
 
 ::selection {
-    background-color: $selection-background-color; // required when declaring ::selection
-    text-shadow: $selection-text-shadow;
+    background-color: selection-background-color; // required when declaring ::selection
+    text-shadow: selection-text-shadow;
 }
 
 // hide content from screens but not screenreaders

@@ -22,7 +22,7 @@ function formatPrompt(pieces) {
     return (Array.isArray(pieces) ? pieces : [pieces]).concat('  : ').join('\n');
 }
 
-module.exports = yeoman.generators.Base.extend({
+module.exports = yeoman.Base.extend({
     prompting: function() {
         var done = this.async();
 
@@ -72,28 +72,27 @@ module.exports = yeoman.generators.Base.extend({
         var copier = copy.bind(this);
 
         mkdirp('example/__tests__');
-        mkdirp('dist');
+        mkdirp('dist/assets');
 
         copier([
             '.eslintrc',
             '.gitignore',
-            '.pleeeaserc',
-            '_sanitize.scss',
+            '_sanitize.styl',
             'CONTRIBUTING.md',
             'example/index.js',
-            'example/style.scss',
+            'example/style.styl',
             'example/__tests__/unit.js',
             'index.js',
-            'jest.preprocessor.js',
+            'jest.setup.js',
             'parallelize.sh',
-            'style.scss',
+            'style.styl',
         ]);
 
         copier([
             'package.json',
             'index.html',
             'CHANGELOG.md',
-            'LICENSE.md',
+            'LICENSE',
             'README.md'
         ], this.answers);
     },
