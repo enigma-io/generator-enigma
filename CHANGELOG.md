@@ -3,7 +3,16 @@
 
 ---
 
-### 4.0.1, 4.0.2 (1/14/2016)
+### 4.0.4 (1/15/2016)
+
+- add CONTRIBUTING.md
+- add CHANGELOG_policy.md
+- update README.md
+- change default package.json version in the template from `0.0.1` to `0.1.0` (see the [SemVer 2.0 FAQ](http://semver.org/))
+
+---
+
+### 4.0.1, 4.0.2, 4.0.3 (1/14/2016)
 
 Updated package metadata, README.
 
