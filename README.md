@@ -21,12 +21,15 @@ Scaffolding for automation of basic tooling and tasks typically required by Reac
 
 ### Installation
 
-1. Pull down this repo
-   ```
-   git clone git@github.com:enigma-io/generator-enigma.git
-   ```
-1. Run `npm install` in the folder and then `npm link`
-1. If you don't have `yo` (Yeoman) installed, run `npm i -g yo`
+```bash
+npm i -g generator-enigma
+```
+
+The build script will automatically try to install Yeoman for you if it isn't installed already. Alternatively, you can do this yourself via
+
+```bash
+npm i -g yo
+```
 
 [back to top](#react-webapp-generator-for-yeoman)
 
@@ -56,7 +59,9 @@ Once you've set up your app, check out the targets available in `package.json`. 
 
 The [Jasmine 2](http://jasmine.github.io/2.0/introduction.html) test runner is included by default, as a part of the [Jest](https://facebook.github.io/jest/) unit testing framework.
 
-It is possible to collect coverage via Jest, by including the following in your package.json's "jest" property:
+Jest's [automocking functionality](https://facebook.github.io/jest/docs/automatic-mocking.html) is disabled in `jest.setup.js`. We've found this dramatically reduces the complexity of writing tests, but you can choose to enable it if desired by commenting out the `jest.autoMockOff()` line.
+
+To collect coverage information, include the following in your package.json's "jest" property:
 
 ```json
 "collectCoverage": true,
@@ -72,5 +77,3 @@ Add the files you wish to acquire coverage for to the list in `jest.collectCover
 ---
 
 This module adheres to [Semantic Versioning](http://semver.org/).
-
-MIT
