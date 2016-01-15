@@ -28,7 +28,7 @@ module.exports = yeoman.Base.extend({
 
         this.log(yosay([
             chalk.bold.white('It\'s app time!'),
-            chalk.gray('You\'re 4 questions from a fully-functional React app, built with ') + chalk.cyan('enigma.io ') + chalk.gray('standards.')
+            chalk.gray('You\'re 4 questions from a fully-functional React app, built with best practice enforcement, integrated testing, and more.')
         ].join('\n')));
 
         var prompts = [{
@@ -36,7 +36,7 @@ module.exports = yeoman.Base.extend({
             name: 'appName',
             message: formatPrompt([
                 chalk.bold.white('What should this webapp be called?'),
-                chalk.gray('  This should conform to the npm "kebab-case" naming, e.g. enigma-web-app')
+                chalk.gray('  This should conform to the npm "kebab-case" naming, e.g. google-maps')
             ]),
         }, {
             type: 'input',
