@@ -3,6 +3,13 @@
 
 ---
 
+### 4.1.0 (3/2/2016)
+
+- update eslintify to 2.x
+- update eslintrc to reflect the changes in eslint 2.x
+
+---
+
 ### 4.0.4 (1/15/2016)
 
 - add CONTRIBUTING.md
