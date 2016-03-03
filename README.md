@@ -1,5 +1,5 @@
-# Enigma Platform Team
-## React Webapp Generator for Yeoman
+# generator-enigma
+__A React webapp scaffolding tool with best practice enforcement, automated testing, and more.__
 
 ---
 

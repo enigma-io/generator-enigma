@@ -1,5 +1,6 @@
-# Enigma Platform Team
-## React Webapp Generator Changelog
+### 4.1.2 (3/3/2016)
+
+- remove/revise the headers of a few static .md files in the repository (no code changes)
 
 ---
 

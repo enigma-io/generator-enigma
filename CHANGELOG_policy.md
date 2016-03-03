@@ -1,8 +1,3 @@
-# Enigma Platform Team
-## React Webapp Generator Changelog Policy
-
----
-
 1. [What is a release?](#what-is-a-release)
 1. [How is versioning handled per release?](#how-is-versioning-handled-per-release)
 1. [How are releases tracked?](#how-are-releases-tracked)

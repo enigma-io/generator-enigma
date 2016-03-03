@@ -1,8 +1,3 @@
-# Enigma Platform Team
-## React Webapp Generator Contributor Policy
-
----
-
 1. [Development Process](#development-process)
 1. [Bug Reporting](#bug-reporting)
     1. [What is considered a bug?](#what-is-considered-a-bug)
