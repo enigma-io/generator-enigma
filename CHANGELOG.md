@@ -1,3 +1,9 @@
+### 4.1.3 (3/3/2016)
+
+- .gitignore -> _gitignore template to fix npm/yeoman screwing with the file and rewriting to something unexpected
+
+---
+
 ### 4.1.2 (3/3/2016)
 
 - remove/revise the headers of a few static .md files in the repository (no code changes)

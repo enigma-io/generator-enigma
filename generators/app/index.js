@@ -10,9 +10,20 @@ function copy(paths, data) {
     paths = Array.isArray(paths) ? paths : [paths];
 
     paths.forEach(function(path) {
+        var src;
+        var dest;
+
+        if (Array.isArray(path)) {
+            src = path[0];
+            dest = path[1];
+        } else {
+            src = path;
+            dest = path;
+        }
+
         this.fs[data ? 'copyTpl' : 'copy'](
-            this.templatePath(path),
-            this.destinationPath(path),
+            this.templatePath(src),
+            this.destinationPath(dest),
             data
         );
     }, this);
@@ -75,8 +86,8 @@ module.exports = yeoman.Base.extend({
         mkdirp('dist/assets');
 
         copier([
-            '.eslintrc',
-            '.gitignore',
+            ['_eslintrc', '.eslintrc'],
+            ['_gitignore', '.gitignore'],
             '_sanitize.styl',
             'CONTRIBUTING.md',
             'example/index.js',
