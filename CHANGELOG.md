@@ -3,6 +3,12 @@
 
 ---
 
+### 4.1.1 (3/2/2016)
+
+- update babel-jest to 5.x (needed for eslint 2 compatibility)
+
+---
+
 ### 4.1.0 (3/2/2016)
 
 - update eslintify to 2.x

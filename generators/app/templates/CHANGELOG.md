@@ -1,3 +1,3 @@
-## 0.0.1 (<%= currentDate %>)
+## 0.1.0 (<%= currentDate %>)
 
 - Initial commit
