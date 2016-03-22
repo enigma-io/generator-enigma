@@ -7,13 +7,11 @@
 
     "env": {
         "browser": true,
-        "node": true,
-        "mocha": true
+        "node": true
     },
 
     "globals": {
-        "expect": true,
-        "sinon": true
+        "expect": true
     },
 
     "parserOptions": {
