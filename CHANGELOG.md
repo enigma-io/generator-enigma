@@ -1,3 +1,15 @@
+### 4.2.0 (3/22/2016)
+
+- Update jest, remove outdated coverage information (73efac24b372ac7de1b207323d65528f9db5be02)
+
+  The bug in Jest was fixed around coverage collection, so it's no longer necessary to manually specify the files to collect from.
+
+- Update dependencies, remove unnecessary Jest configs (b2f1d50af47ffb207c5d1bb6b7e4266b11341679)
+
+- Remove unnecessary eslintrc configs (e58f4f8a359a80affe041dc53d4b48a24035d3a5)
+
+---
+
 ### 4.1.3 (3/3/2016)
 
 - .gitignore -> _gitignore template to fix npm/yeoman screwing with the file and rewriting to something unexpected
