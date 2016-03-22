@@ -49,6 +49,7 @@ Once you've set up your app, check out the targets available in `package.json`. 
 
 - `start`: Compiles your app and boots up a livereload server -- just make changes to your files (JS, Stylus/CSS, etc.)
 - `test`: Runs your unit tests. (will automatically include any file inside of folders named `__tests__`)
+- `coverage`: Runs your unit tests and creates an LCOV coverage report in the `/coverage` directory
 - `lint`: Checks your project for JS code style, according to the rules in `.eslintrc`
 
 [back to top](#react-webapp-generator-for-yeoman)
@@ -60,17 +61,6 @@ Once you've set up your app, check out the targets available in `package.json`. 
 The [Jasmine 2](http://jasmine.github.io/2.0/introduction.html) test runner is included by default, as a part of the [Jest](https://facebook.github.io/jest/) unit testing framework.
 
 Jest's [automocking functionality](https://facebook.github.io/jest/docs/automatic-mocking.html) is disabled in `jest.setup.js`. We've found this dramatically reduces the complexity of writing tests, but you can choose to enable it if desired by commenting out the `jest.autoMockOff()` line.
-
-To collect coverage information, include the following in your package.json's "jest" property:
-
-```json
-"collectCoverage": true,
-"collectCoverageOnlyFrom": {
-  "example/index.js": true
-}
-```
-
-Add the files you wish to acquire coverage for to the list in `jest.collectCoverageOnlyFrom`. The framework is supposed to support globbing, but there is a [bug](https://github.com/facebook/jest/issues/632) and only specifically-mentioned files work at this time.
 
 [back to top](#react-webapp-generator-for-yeoman)
 

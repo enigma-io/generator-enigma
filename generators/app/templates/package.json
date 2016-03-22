@@ -23,8 +23,8 @@
     "budo": "^7.0.0",
     "eslint-plugin-react": "^3.0.0",
     "eslintify": "^2.0.0",
-    "jest-cli": "^0.8.2",
     "stylus": "^0.53.0",
+    "jest-cli": "^0.9.2",
     "uglify-js": "^2.4.23",
     "watchify": "^3.2.3"
   },
@@ -55,6 +55,7 @@
     "release": "npm run css:release && npm run html:release && npm run js:release",
     "start": "sh parallelize.sh \"npm run css:watch\" \"npm run js:watch\"",
     "lint": "browserify index.js -t eslintify -t babelify --colors > /dev/null",
-    "test": "jest --verbose"
+    "test": "jest --verbose",
+    "coverage": "jest --coverage"
   }
 }
