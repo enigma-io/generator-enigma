@@ -1,3 +1,9 @@
+### 4.2.1 (3/29/2016)
+
+- Update babel-eslint to non-beta 6.x (1ad349baa82413b10863d67e13f40cbc2e6c276c)
+
+---
+
 ### 4.2.0 (3/22/2016)
 
 - Update jest, remove outdated coverage information (73efac24b372ac7de1b207323d65528f9db5be02)
