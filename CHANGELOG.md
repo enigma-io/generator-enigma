@@ -1,3 +1,13 @@
+### 4.3.0 (4/18/2016)
+
+- __Sub-out eslintify for eslint__ (c1b4fff) Allows for watch mode usage if desired.
+- __Use the Github node gitignore template__ (7c5d3a3)
+- __Upgrade to React 15.x__ (83453c8) No codebase changes.
+- __Rename __tests__/unit.js -> __tests__/index.js__ (2863e57)
+- __Ignore node_modules when linting__ (2fb5c67)
+
+---
+
 ### 4.2.1 (3/29/2016)
 
 - Update babel-eslint to non-beta 6.x (1ad349baa82413b10863d67e13f40cbc2e6c276c)
