@@ -86,13 +86,14 @@ module.exports = yeoman.Base.extend({
         mkdirp('dist/assets');
 
         copier([
+            ['_eslintignore', '.eslintignore'],
             ['_eslintrc', '.eslintrc'],
             ['_gitignore', '.gitignore'],
             '_sanitize.styl',
             'CONTRIBUTING.md',
             'example/index.js',
             'example/style.styl',
-            'example/__tests__/unit.js',
+            'example/__tests__/index.js',
             'index.js',
             'jest.setup.js',
             'parallelize.sh',
