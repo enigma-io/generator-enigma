@@ -1,3 +1,9 @@
+### 4.4.0 (4/28/2016)
+
+- __Update to Jest 12.x__ (51af942f398f217e760d9346bb1e4a369039b4cb) Perf improvements, especially for large projects
+
+---
+
 ### 4.3.0 (4/18/2016)
 
 - __Sub-out eslintify for eslint__ (c1b4fff) Allows for watch mode usage if desired.
