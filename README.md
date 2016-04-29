@@ -31,7 +31,7 @@ The build script will automatically try to install Yeoman for you if it isn't in
 npm i -g yo
 ```
 
-[back to top](#react-webapp-generator-for-yeoman)
+[back to top](#generator-enigma)
 
 ---
 
@@ -52,7 +52,7 @@ Once you've set up your app, check out the targets available in `package.json`. 
 - `coverage`: Runs your unit tests and creates an LCOV coverage report in the `/coverage` directory
 - `lint`: Checks your project for JS code style, according to the rules in `.eslintrc`
 
-[back to top](#react-webapp-generator-for-yeoman)
+[back to top](#generator-enigma)
 
 ---
 
@@ -60,9 +60,9 @@ Once you've set up your app, check out the targets available in `package.json`. 
 
 The [Jasmine 2](http://jasmine.github.io/2.0/introduction.html) test runner is included by default, as a part of the [Jest](https://facebook.github.io/jest/) unit testing framework.
 
-Jest's [automocking functionality](https://facebook.github.io/jest/docs/automatic-mocking.html) is disabled in `jest.setup.js`. We've found this dramatically reduces the complexity of writing tests, but you can choose to enable it if desired by commenting out the `jest.autoMockOff()` line.
+Jest's [automocking functionality](https://facebook.github.io/jest/docs/automatic-mocking.html) is disabled via the `"jest": {"automock": false}` `package.json` field. We've found this dramatically reduces the complexity of writing tests, but you can choose to enable it if desired.
 
-[back to top](#react-webapp-generator-for-yeoman)
+[back to top](#generator-enigma)
 
 ---
 

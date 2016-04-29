@@ -95,7 +95,6 @@ module.exports = yeoman.Base.extend({
             'example/style.styl',
             'example/__tests__/index.js',
             'index.js',
-            'jest.setup.js',
             'parallelize.sh',
             'style.styl',
         ]);
