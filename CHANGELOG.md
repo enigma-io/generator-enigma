@@ -1,3 +1,7 @@
+### 4.5.0 (5/9/2016)
+
+- __Remove the dead eslintify reference__ (d6fcff6ba646216f3eab3b47f2cdc59013f12148)
+
 ### 4.4.0 (4/28/2016)
 
 - __Update to Jest 12.x__ (51af942f398f217e760d9346bb1e4a369039b4cb) Perf improvements, especially for large projects
