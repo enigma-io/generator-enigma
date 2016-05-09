@@ -41,7 +41,7 @@
   "scripts": {
     "js": "browserify index.js -t babelify --debug > dist/assets/bundle.js",
     "js:release": "NODE_ENV=production browserify index.js -t babelify | uglifyjs -mc drop_console > dist/assets/bundle.min.js",
-    "js:watch": "budo index.js:dist/assets/bundle.js -H 0.0.0.0 --live --open --iw -- --debug -t eslintify -t babelify",
+    "js:watch": "budo index.js:dist/assets/bundle.js -H 0.0.0.0 --live --open --iw -- --debug -t babelify",
     "css": "stylus -m -u autoprefixer-stylus style.styl -o dist/assets/style.css --sourcemap-inline",
     "css:release": "stylus -c -u autoprefixer-stylus style.styl -o dist/assets/style.min.css",
     "css:watch": "npm run css -- -w",
