@@ -42,41 +42,44 @@ module.exports = yeoman.Base.extend({
             chalk.gray('You\'re 4 questions from a fully-functional React app, built with best practice enforcement, integrated testing, and more.')
         ].join('\n')));
 
-        var prompts = [{
-            type: 'input',
-            name: 'appName',
-            message: formatPrompt([
-                chalk.bold.white('What should this webapp be called?'),
-                chalk.gray('  This should conform to the npm "kebab-case" naming, e.g. google-maps')
-            ]),
-        }, {
-            type: 'input',
-            name: 'appDescription',
-            message: formatPrompt([
-                chalk.bold.white('What will the app be used for?'),
-                chalk.gray('  A one-liner - the elevator pitch!')
-            ])
-        }, {
-            type: 'input',
-            name: 'authorName',
-            message: formatPrompt(chalk.bold.white('What is your first and last name?')),
-            default: this.user.git.name()
-        }, {
-            type: 'input',
-            name: 'authorEmail',
-            message: formatPrompt(chalk.bold.white('What is your email?')),
-            default: this.user.git.email()
-        }];
+        // fix yosay doing weird stuff in Node 6+
+        setTimeout(() => {
+            var prompts = [{
+                type: 'input',
+                name: 'appName',
+                message: formatPrompt([
+                    chalk.bold.white('What should this webapp be called?'),
+                    chalk.gray('  This should conform to the npm "kebab-case" naming, e.g. google-maps')
+                ]),
+            }, {
+                type: 'input',
+                name: 'appDescription',
+                message: formatPrompt([
+                    chalk.bold.white('What will the app be used for?'),
+                    chalk.gray('  A one-liner - the elevator pitch!')
+                ])
+            }, {
+                type: 'input',
+                name: 'authorName',
+                message: formatPrompt(chalk.bold.white('What is your first and last name?')),
+                default: this.user.git.name()
+            }, {
+                type: 'input',
+                name: 'authorEmail',
+                message: formatPrompt(chalk.bold.white('What is your email?')),
+                default: this.user.git.email()
+            }];
 
-        this.prompt(prompts, function(answers) {
-            this.answers = answers;
-            this.answers.appName = _.kebabCase(this.answers.appName);
+            this.prompt(prompts, function(answers) {
+                this.answers = answers;
+                this.answers.appName = _.kebabCase(this.answers.appName);
 
-            this.answers.currentDate = (new Date()).toLocaleDateString();
-            this.answers.currentYear = (new Date()).getFullYear();
+                this.answers.currentDate = (new Date()).toLocaleDateString();
+                this.answers.currentYear = (new Date()).getFullYear();
 
-            done();
-        }.bind(this));
+                done();
+            }.bind(this));
+        }, 0);
     },
 
     writing: function() {
@@ -92,6 +95,7 @@ module.exports = yeoman.Base.extend({
             ['_eslintrc', '.eslintrc'],
             ['_gitignore', '.gitignore'],
             'CONTRIBUTING.md',
+            'scripts/budo.js',
             'scripts/parallelize.sh',
             'src/example/index.js',
             'src/example/style.styl',
