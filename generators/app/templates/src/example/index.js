@@ -1,10 +1,17 @@
 import React from 'react';
 
-class Example extends React.Component {
+export default class Example extends React.Component {
+    static propTypes = {
+        title: React.PropTypes.string,
+        description: React.PropTypes.string,
+    }
+
     renderTitle() {
         if (this.props.title) {
             return (
-                <h1 ref='title' className='ui-example-title'>{this.props.title}</h1>
+                <h1 ref='title' className='ui-example-title'>
+                    {this.props.title}
+                </h1>
             );
         }
     }
@@ -12,7 +19,9 @@ class Example extends React.Component {
     renderDescription() {
         if (this.props.description) {
             return (
-                <p ref='description' className='ui-example-desc'>{this.props.description}</p>
+                <p ref='description' className='ui-example-desc'>
+                    {this.props.description}
+                </p>
             );
         }
     }
@@ -26,10 +35,3 @@ class Example extends React.Component {
         );
     }
 }
-
-Example.propTypes = {
-    title: React.PropTypes.string,
-    description: React.PropTypes.string,
-};
-
-export default Example;

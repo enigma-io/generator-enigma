@@ -1,10 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {render} from 'react-dom';
 import Example from './example';
 
-// Do bootstrapping here...
+// Do bootstrapping here... perhaps add something like react-router?
 
-ReactDOM.render(
+render(
     <Example
         title='Hello World!'
         description='This is your first React component...' />, document.querySelector('main')

@@ -1,3 +1,7 @@
+// Sanitize is a nice starter stylesheet to help remove many cross-browser differences in how elements
+// are displayed and present a clean working surface to build your final designs. Customize the variables
+// below to your liking, or get rid of the whole thing if you don't want it.
+
 /*! sanitize.css | CC0 Public Domain | github.com/jonathantneal/sanitize.css */
 
 root-box-sizing ?= border-box
@@ -241,8 +245,7 @@ nav ul {
 // style select like a standard input
 
 select {
-    -moz-appearance: none;    // Firefox 36+
-    -webkit-appearance: none; // Chrome 41+
+    appearance: none;
 
     &::-ms-expand {
         display: none;        // Internet Explorer 11+
@@ -285,3 +288,12 @@ textarea {
         position: absolute !important;
     }
 }
+
+// Your global styles go here.
+// It's recommended to break up your rules on a per-component basis and let each component inject them lazily.
+
+// Write your code without vendor-prefixing wherever possible, Autoprefixer will add them for you during compilation.
+// e.g. display: flex;   ------>  display: webkit-flex; display: webkit-box; etc.
+
+// Automatically import style.styl files in your components
+@require "**/*.styl"

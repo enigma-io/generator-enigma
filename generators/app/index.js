@@ -82,29 +82,29 @@ module.exports = yeoman.Base.extend({
     writing: function() {
         var copier = copy.bind(this);
 
-        mkdirp('example/__tests__');
         mkdirp('dist/assets');
+        mkdirp('scripts');
+        mkdirp('src/example/__tests__');
+        mkdirp('src/static/assets/images');
 
         copier([
             ['_eslintignore', '.eslintignore'],
             ['_eslintrc', '.eslintrc'],
             ['_gitignore', '.gitignore'],
-            '_sanitize.styl',
             'CONTRIBUTING.md',
-            'example/index.js',
-            'example/style.styl',
-            'example/__tests__/index.js',
-            'index.js',
-            'parallelize.sh',
-            'style.styl',
+            'scripts/parallelize.sh',
+            'src/example/index.js',
+            'src/example/style.styl',
+            'src/example/__tests__/index.js',
+            'src/index.js',
+            'src/style.styl',
         ]);
 
         copier([
-            'package.json',
-            'index.html',
             'CHANGELOG.md',
-            'LICENSE',
-            'README.md'
+            'package.json',
+            'README.md',
+            'src/static/index.html'
         ], this.answers);
     },
 
