@@ -1,6 +1,25 @@
+### 5.0.0 (5/19/2016)
+
+- __Bump minimum Node version to 4.0__ (6e2a0db)
+- __Fix a yosay bug__ (7bef882) The prompts were showing up in the middle of the yosay speech bubble for some reason.
+- __Update overall structure, add babel static class method plugin__ (eb82fc4)
+    1. added `src/` at the root of every project to keep your working files clean and separate from everything else
+    2. merged the sanitize stylesheet into the top-level `style.styl`
+    3. updated various files with newer ES6+ conveniences
+    4. added the babel "transform-class-properties" plugin to enable static class property shortcuts
+       (part of the enhancements in #3)
+    5. removed the `LICENSE` file in favor of the simple license field in `package.json`
+    6. reorganized where static assets are meant to live; place your images, fonts, etc in `src/static/assets`
+       and they will be copied over to `/dist` during the build process
+    7. switched the dev server (budo) invocation from the CLI to using it as a library; see `scripts/budo.js`
+
+---
+
 ### 4.5.0 (5/9/2016)
 
 - __Remove the dead eslintify reference__ (d6fcff6ba646216f3eab3b47f2cdc59013f12148)
+
+---
 
 ### 4.4.0 (4/28/2016)
 
