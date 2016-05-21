@@ -1,3 +1,9 @@
+### 5.0.1 (5/21/2016)
+
+- __Also watch dist/ for CSS changes__ (113fa16) Fixes livereload not picking up changes in the emitted CSS.
+
+---
+
 ### 5.0.0 (5/19/2016)
 
 - __Bump minimum Node version to 4.0__ (6e2a0db)
