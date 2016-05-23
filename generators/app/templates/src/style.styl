@@ -290,10 +290,11 @@ textarea {
 }
 
 // Your global styles go here.
-// It's recommended to break up your rules on a per-component basis and let each component inject them lazily.
+// It's recommended to break up your rules on a per-component basis.
 
 // Write your code without vendor-prefixing wherever possible, Autoprefixer will add them for you during compilation.
 // e.g. display: flex;   ------>  display: webkit-flex; display: webkit-box; etc.
 
-// Automatically import style.styl files in your components
-@require "**/*.styl"
+// Automatically import style.styl files in subdirectories below
+// (the extra */* is to prevent this file from importing itself)
+@import "*/*/**/*.styl"
