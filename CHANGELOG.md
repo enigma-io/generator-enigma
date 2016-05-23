@@ -1,3 +1,9 @@
+### 5.0.2 (5/23/2016)
+
+- __Prevent src/style.styl from importing itself__ (253ac42)
+
+---
+
 ### 5.0.1 (5/21/2016)
 
 - __Also watch dist/ for CSS changes__ (113fa16) Fixes livereload not picking up changes in the emitted CSS.
