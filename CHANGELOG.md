@@ -1,3 +1,9 @@
+### 5.0.3 (5/30/2016)
+
+- __Remove an excess level of globbing in the main `style.styl`__ (bec96ee21317c433f6f0e8c240f51c8299ba2b7a)
+
+---
+
 ### 5.0.2 (5/23/2016)
 
 - __Prevent src/style.styl from importing itself__ (253ac42)

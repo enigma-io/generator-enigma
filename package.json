@@ -1,7 +1,7 @@
 {
     "name": "generator-enigma",
     "description": "Generate a React application with best practice enforcement, integrated testing, and more.",
-    "version": "5.0.2",
+    "version": "5.0.3",
     "license": "MIT",
     "contributors": [
         "Evan Jacobs <evan.jacobs@enigma.io> (http://yaycmyk.com)"
