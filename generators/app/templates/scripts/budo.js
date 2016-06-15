@@ -3,7 +3,7 @@ require('budo')('src/index.js', {
         debug: true,
     },
 
-    dir: ['src/static', 'dist'],
+    dir: ['src/static', 'public'],
     host: '0.0.0.0',
     live: true,
     open: true,
@@ -13,6 +13,6 @@ require('budo')('src/index.js', {
     stream: process.stdout,
 
     watchGlob: [
-        '{dist,src}/**/*.{html,css,json}'
+        '{public,src}/**/*.{html,css,json}'
     ]
 });

@@ -43,11 +43,12 @@ The generator will ask a few questions and insert the prebuilt skeleton for a ty
 
 Once you've set up your app, check out the targets available in `package.json`. The conveniences available at `npm run <target>`:
 
-- `build`: Compiles your application JS (with sourcemapping -- good for debugging) to `dist/assets/bundle.js` and style files (with sourcemapping) to `dist/assets/style.css`
+- `build`: Compiles your application JS (with sourcemapping -- good for debugging) to `public/assets/bundle.js` and style files (with sourcemapping) to `public/assets/style.css`
 
-- `release`: Compiles and minifies your application JS (without sourcemapping) to `dist/assets/bundle.min.js` and style files (without sourcemapping) to `dist/assets/style.min.css` - the intent is you should be able to copy the contents of `dist` to a server and have it work without modification
+- `release`: Compiles and minifies your application JS (without sourcemapping) to `public/assets/bundle.min.js` and style files (without sourcemapping) to `public/assets/style.min.css` - the intent is you should be able to copy the contents of `public/` to a server and have it work without modification
 
 - `start`: Compiles your app and boots up a livereload server -- just make changes to your files (JS, Stylus/CSS, etc.)
+
 - `test`: Runs your unit tests. (will automatically include any file inside of folders named `__tests__`)
 - `coverage`: Runs your unit tests and creates an LCOV coverage report in the `/coverage` directory
 - `lint`: Checks your project for JS code style, according to the rules in `.eslintrc`

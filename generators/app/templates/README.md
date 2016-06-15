@@ -20,4 +20,4 @@ Add files, edit your code, etc and the browser will automatically refresh with t
 npm run release
 ```
 
-Then simply copy the contents of `dist/` to your final destination.
+Then simply copy the contents of `public/` to your final destination.

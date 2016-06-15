@@ -85,7 +85,7 @@ module.exports = yeoman.Base.extend({
     writing: function() {
         var copier = copy.bind(this);
 
-        mkdirp('dist/assets');
+        mkdirp('public/assets');
         mkdirp('scripts');
         mkdirp('src/example/__tests__');
         mkdirp('src/static/assets/images');
