@@ -1,3 +1,9 @@
+### 5.0.5 (6/15/2016)
+
+__Ignore /public from linting__ (2da81fb)
+
+---
+
 ### 5.0.4 (6/15/2016)
 
 - __Rename dist -> public__ (be44957) This naming more closely follows the convention set by other
