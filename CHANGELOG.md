@@ -1,6 +1,13 @@
+### 5.0.4 (6/15/2016)
+
+- __Rename dist -> public__ (be44957) This naming more closely follows the convention set by other
+popular projects, and feels a little more obvious.
+
+---
+
 ### 5.0.3 (5/30/2016)
 
-- __Remove an excess level of globbing in the main `style.styl`__ (bec96ee21317c433f6f0e8c240f51c8299ba2b7a)
+- __Remove an excess level of globbing in the main `style.styl`__ (bec96ee)
 
 ---
 
