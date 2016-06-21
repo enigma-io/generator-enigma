@@ -68,6 +68,10 @@ module.exports = yeoman.Base.extend({
                 name: 'authorEmail',
                 message: formatPrompt(chalk.bold.white('What is your email?')),
                 default: this.user.git.email()
+            }, {
+                type: 'confirm',
+                name: 'include_routing',
+                message: formatPrompt(chalk.bold.white('Would you like routing to be set up? (via react-router)')),
             }];
 
             this.prompt(prompts, function(answers) {
@@ -100,7 +104,6 @@ module.exports = yeoman.Base.extend({
             'src/example/index.js',
             'src/example/style.styl',
             'src/example/__tests__/index.js',
-            'src/index.js',
             'src/style.styl',
         ]);
 
@@ -108,6 +111,7 @@ module.exports = yeoman.Base.extend({
             'CHANGELOG.md',
             'package.json',
             'README.md',
+            'src/index.js',
             'src/static/index.html'
         ], this.answers);
     },
