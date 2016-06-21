@@ -1,3 +1,21 @@
+### 5.1.0 (6/21/2016)
+
+__[Feature] Optional react-router installation, + 2 misc fixes__ (0fb2c08)
+
+There is now an additional prompt during `yo enigma` on whether
+you want to automatically have react-router set up. It will default
+to HTML5 pushstate-based routing, which budo is configured to support.
+
++ Fixed static/index.html using relative paths when they should always
+  be absolute to the serving root when using pushstate-based routing,
+  since path nesting is an illusion.
+
++ No longer using `<main>` as the React root, as semantically it may
+  make more sense to be used deeper in the nested tree adjacent to a
+  `<header>` or something similar.
+
+---
+
 ### 5.0.5 (6/15/2016)
 
 __Ignore /public from linting__ (2da81fb)
