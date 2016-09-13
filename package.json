@@ -16,11 +16,14 @@
         "stylus"
     ],
     "dependencies": {
-        "yeoman-generator": "^0.22.0",
+        "yeoman-generator": "^0.24.0",
         "chalk": "^1.0.0",
         "yosay": "^1.0.2",
         "lodash": "^4.0.0",
         "mkdirp": "^0.5.1"
+    },
+    "peerDependencies": {
+        "yo": ">= 1.8"
     },
     "engines": {
         "node": ">= 4"

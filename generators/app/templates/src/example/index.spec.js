@@ -2,7 +2,7 @@
 
 import React from 'react';
 import {render, unmountComponentAtNode as cleanup} from 'react-dom';
-import Example from '../index';
+import Example from './index';
 
 describe('Example', () => {
     const testingRootNode = document.body.appendChild(document.createElement('div'));

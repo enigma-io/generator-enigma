@@ -74,7 +74,7 @@ module.exports = yeoman.Base.extend({
                 message: formatPrompt(chalk.bold.white('Would you like routing to be set up? (via react-router)')),
             }];
 
-            this.prompt(prompts, function(answers) {
+            this.prompt(prompts).then(function(answers) {
                 this.answers = answers;
                 this.answers.appName = _.kebabCase(this.answers.appName);
 
@@ -91,7 +91,7 @@ module.exports = yeoman.Base.extend({
 
         mkdirp('public/assets');
         mkdirp('scripts');
-        mkdirp('src/example/__tests__');
+        mkdirp('src/example');
         mkdirp('src/static/assets/images');
 
         copier([
@@ -102,8 +102,8 @@ module.exports = yeoman.Base.extend({
             'scripts/budo.js',
             'scripts/parallelize.sh',
             'src/example/index.js',
+            'src/example/index.spec.js',
             'src/example/style.styl',
-            'src/example/__tests__/index.js',
             'src/style.styl',
         ]);
 

@@ -12,7 +12,7 @@ __A React webapp scaffolding tool with best practice enforcement, automated test
 Scaffolding for automation of basic tooling and tasks typically required by React projects, including:
 
 - CommonJS module bundling via [Browserify](http://browserify.org/)
-- ES2015 syntax support and transpilation via [Babel](https://babeljs.io/)
+- ES2015+ (ES6+) syntax support and transpilation via [Babel](https://babeljs.io/)
 - Code quality assessment & style enforcement via [ESLint](http://eslint.org/)
 - [Stylus](http://stylus-lang.com/) CSS preprocessing & automatic vendor prefix management via [Autoprefixer](https://github.com/postcss/autoprefixer#autoprefixer-)
 - Unit testing via the [Jest](https://facebook.github.io/jest/) framework and [Jasmine2](http://jasmine.github.io/2.0/introduction.html) test runner
@@ -61,7 +61,7 @@ Once you've set up your app, check out the targets available in `package.json`. 
 
 The [Jasmine 2](http://jasmine.github.io/2.0/introduction.html) test runner is included by default, as a part of the [Jest](https://facebook.github.io/jest/) unit testing framework.
 
-Jest's [automocking functionality](https://facebook.github.io/jest/docs/automatic-mocking.html) is disabled via the `"jest": {"automock": false}` `package.json` field. We've found this dramatically reduces the complexity of writing tests, but you can choose to enable it if desired.
+Jest supports a broad spectrum of matchers and test-writing styles, so check out their documentation to customize things to your liking!
 
 [back to top](#generator-enigma)
 

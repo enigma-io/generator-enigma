@@ -7,15 +7,17 @@
 
     "env": {
         "browser": true,
-        "node": true
+        "node": true,
+        "jasmine": true
     },
 
     "globals": {
-        "expect": true
+        "expect": true,
+        "jest": true
     },
 
     "parserOptions": {
-        "ecmaVersion": 6,
+        "ecmaVersion": 7,
         "ecmaFeatures": {
             "jsx": true
         },
@@ -139,12 +141,12 @@
         "react/jsx-sort-prop-types": 0,
         "react/jsx-uses-react": 2,
         "react/jsx-uses-vars": 2,
+        "react/jsx-wrap-multilines": 2,
         "react/no-did-mount-set-state": 0,
         "react/no-did-update-set-state": 2,
-        "react/no-multi-comp": 2,
+        "react/no-multi-comp": 0,
         "react/no-unknown-property": 2,
         "react/prop-types": 1,
-        "react/self-closing-comp": 2,
-        "react/wrap-multilines": 2
+        "react/self-closing-comp": 2
     }
 }

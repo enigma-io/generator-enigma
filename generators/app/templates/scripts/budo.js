@@ -13,6 +13,6 @@ require('budo')('src/index.js', {
     stream: process.stdout,
 
     watchGlob: [
-        '{public,src}/**/*.{html,css,json}'
-    ]
+        '{public,src}/**/*.{html,css,json}',
+    ],
 });
