@@ -1,7 +1,7 @@
 {
     "name": "generator-enigma",
     "description": "Generate a React application with best practice enforcement, integrated testing, and more.",
-    "version": "5.1.0",
+    "version": "5.2.0",
     "license": "MIT",
     "contributors": [
         "Evan Jacobs <evan@yaycmyk.com> (http://yaycmyk.com)"
@@ -21,9 +21,6 @@
         "yosay": "^1.0.2",
         "lodash": "^4.0.0",
         "mkdirp": "^0.5.1"
-    },
-    "peerDependencies": {
-        "yo": ">= 1.8"
     },
     "engines": {
         "node": ">= 4"

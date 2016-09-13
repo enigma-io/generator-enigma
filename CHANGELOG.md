@@ -1,3 +1,48 @@
+### 5.2.0 (9/13/2016)
+
+Update various dependencies, including:
+
+```
+babel-jest           ^12.0.0  >>  ^15.0.0
+eslint               ^2.0.0   >>  ^3.0.0
+eslint-plugin-react  ^4.2.3   >>  ^6.0.0
+jest-cli             ^13.0.0  >>  ^15.1.0
+react                ^15.0.0  >>  ^15.3.0
+react-dom            ^15.0.0  >>  ^15.3.0
+```
+
+Aside from the dependencies, the default test file extension has been changed from `__tests__/index.js` style to `*.spec.js`. The primary reason was reduced confusion due to the test file living alongside what it's targetting; it's also harder to accidentally forget the tests exist for a file in general when they're co-located in the same directory. This fits into the organization guidelines set forth in [A maintainable front-end project structure (2016)](https://medium.com/@ultraviol3tlux/maintainable-front-end-project-structures-2ce0dca2fe2d).
+
+Before:
+
+```
+/
+    component-x/
+        __tests__/
+            index.js
+        index.js
+    component-y/
+        __tests__/
+            index.js
+        index.js
+```
+
+After:
+
+```
+/
+    component-x/
+        index.js
+        index.spec.js
+    component-y/
+        index.js
+        index.spec.js
+```
+
+Thank you for using `generator-enigma`!
+
+---
+
 ### 5.1.0 (6/21/2016)
 
 __[Feature] Optional react-router installation, + 2 misc fixes__ (0fb2c08)
