@@ -4,7 +4,7 @@
     "version": "5.2.0",
     "license": "MIT",
     "contributors": [
-        "Evan Jacobs <evan@yaycmyk.com> (http://yaycmyk.com)"
+        "Evan Scott <glitterbyte@gmail.com> (http://yaycmyk.com)"
     ],
     "repository": "https://github.com/enigma-io/generator-enigma",
     "bugs": "https://github.com/enigma-io/generator-enigma/issues",
