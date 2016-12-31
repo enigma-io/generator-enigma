@@ -1,3 +1,27 @@
+### 5.3.0 (12/31/2016)
+
+Updated some dependencies...
+
+```
+autoprefixer-stylus         ^0.9.2  >> ^0.11.0
+babel-eslint                ^6.0.0  >> ^7.0.0
+babel-jest                  ^15.0.0 >> ^18.0.0
+budo                        ^8.1.0  >> ^9.0.0
+jest-cli                    ^15.1.0 >> ^18.0.0
+```
+
+Also added the "transform inline environment variables" Babel plugin. It helps get the smallest possible minification when used in conjunction with Uglify's dead code elimination in situations where code is only included for development purposes, e.g.
+
+```js
+if (process.env.NODE_ENV === 'development') {
+    // do something special
+}
+```
+
+You can read more on it [on the Babel website](https://babeljs.io/docs/plugins/transform-inline-environment-variables/).
+
+Happy New Year! 🎉
+
 ### 5.2.0 (9/13/2016)
 
 Update various dependencies, including:
